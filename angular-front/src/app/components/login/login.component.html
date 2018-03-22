@@ -1,0 +1,27 @@
+<div class = "back">
+
+<form>
+<div class = "login">
+<h3> Log In </h3>
+<br>
+
+<p *ngIf="loginErrorMessage" class="error">
+  {{ loginErrorMessage }}
+</p>
+
+<form (ngSubmit)="doLogin()">
+  <label for="login-username-input"> Username </label>
+  <input id="login-username-input" type="text" placeholder="username" [(ngModel)]="loginInfo.username" name="loginUsername">
+  <br>
+
+  <label for="login-pass-input"> Password </label>
+  <input id="login-pass-input" type="password" placeholder="password" [(ngModel)]="loginInfo.password" name="loginPassword">
+  <br><br>
+
+  <button> Log In </button>
+</form>
+<br>
+<p>Don't have account? <a [routerLink]="['/signup']">Sign Up</a></p>
+</div>
+</form>
+</div>
